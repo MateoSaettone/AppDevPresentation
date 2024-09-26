@@ -1,11 +1,15 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+ import { Image, StyleSheet, Platform, Dimensions } from 'react-native';
+import { LineChart } from 'react-native-chart-kit';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import  HeartRateChart  from '@/components/heartRateChart';
 
 export default function HomeScreen() {
+
+
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -16,9 +20,14 @@ export default function HomeScreen() {
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
+        <ThemedText type="title">Public Health App</ThemedText>
       </ThemedView>
+
+      <ThemedView>
+        <HeartRateChart />
+      </ThemedView>
+
+
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">Step 1: Try it</ThemedText>
         <ThemedText>
