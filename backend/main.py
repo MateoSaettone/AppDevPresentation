@@ -100,7 +100,7 @@ def read_heart_rates_by_name(name: str, db: db_dependency):
 import asyncio
 from bleak import BleakClient
 
-# Replace this with your Polar H10 MAC address
+# Polar H10 mac address
 mac_address = "EB:D9:AB:99:89:8F"
 
 # UUID for the Heart Rate Measurement characteristic
