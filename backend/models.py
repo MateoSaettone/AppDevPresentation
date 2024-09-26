@@ -1,9 +1,12 @@
-from sqlalchemy import Column, Integer, String, Boolean
-from database import Base
+from sqlalchemy import Column, Integer, String, TIMESTAMP, func
+from sqlalchemy.ext.declarative import declarative_base
 
-class User(Base):
-    __tablename__ = 'test'
+Base = declarative_base()
+
+class HeartRate(Base):
+    __tablename__ = "heart_rate"
 
     id = Column(Integer, primary_key=True, index=True)
-    username = Column(String(50), unique=True)
-    hashed_password = Column(String(50))
+    name = Column(String(100), nullable=False)
+    heart_rate = Column(Integer, nullable=False)
+    recorded_at = Column(TIMESTAMP, server_default=func.now())
